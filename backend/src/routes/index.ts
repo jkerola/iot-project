@@ -1,6 +1,6 @@
 import { Router } from "express";
-import * as controller from "../controllers/index";
+import { indexController } from "../controllers/index";
 
 export const index = Router();
 
-index.get("/", controller.index);
+index.get("/", indexController);

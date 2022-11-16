@@ -1,9 +1,7 @@
-import { Request, response, Response } from "express";
+import { Request, response, Response, Router } from "express";
 
-/**
- * GET /
- * Home page.
- */
-export const index = async (req: Request, res: Response): Promise<Response> => {
-    return res.status(200).json({ message: "hello world" });
-};
+export const indexController = Router();
+
+indexController.get("/", (req: Request, res: Response): Response => {
+    return res.status(200).json({ enviroment: req.app.get("env") });
+});
