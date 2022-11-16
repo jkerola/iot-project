@@ -1,0 +1,28 @@
+repos:
+  # Eslint
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: "v8.12.0" # Use the sha / tag you want to point at
+    hooks:
+      - id: eslint
+        files: \.[jt]sx?$ # *.js, *.jsx, *.ts and *.tsx
+        types: [file]
+  # Detect secrets
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: "v1.2.0"
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]
+        exclude: package.lock.json
+  # Check newlines, yaml is valid, prevent commits to main
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: no-commit-to-branch
+        args: [--branch, main, --branch, release]
+  # Prettier for any YAML, README
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v2.6.1" # Use the sha or tag you want to point at
+    hooks:
+      - id: prettier
