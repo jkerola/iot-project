@@ -23,26 +23,7 @@ cd iot-project
 pre-commit install
 ```
 
-### Back-end
-
-```shell
-cd backend
-npm install
-```
-
-Get the API key shared in teams and save it in a file called _.dotenv_:
-
-```shell
-APIKEY=<key here>
-PORT=<application port here>
-```
-
-### Front-end
-
-```shell
-cd frontend
-npm install
-```
+See the readme files under _backend_ and _frontend_ for more instructions.
 
 ## Example query
 
