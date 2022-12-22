@@ -41,7 +41,9 @@ PORT=<application port here>
 
 ```shell
 cd frontend
-npm install
+cd iot-project
+npm install recharts
+npm start
 ```
 
 ## Example query
