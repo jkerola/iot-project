@@ -9,8 +9,8 @@ export const areasController = Router();
 dotenv.config();
 
 // Constants
-const BASEURL = process.env.API_URL;
 const APIKEY = process.env.API_KEY;
+const BASEURL = "https://query-api.rahtiapp.fi";
 const TIMESPAN = 30 * 60 * 1000; // past 30 minutes
 
 areasController.get(

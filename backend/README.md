@@ -1,4 +1,12 @@
-# Express TypeScript template
+# Backend for IOT project
+
+Once running, the API is available at http://localhost:3000/
+
+The default route **/** gives average CO2 and crowd estimations for all restaurants.
+
+Furthermore, specific information can be requested by using the provided restaurant names, for example **/foodoo**.
+
+Predictions are made using hard-coded limits set in **src/utils/analytics.ts**, which still require fine-tuning.
 
 # Pre-reqs
 
@@ -12,8 +20,10 @@ Project started from this [template repository](https://github.com/greenroach/ex
 -   Add .env file
 
 ```shell
+# create a file called .env in the /backend directory
 touch .env
-echo APIKEY=<key here> >> .env
+# add the Api-key into the file
+API_KEY=<key here>
 ```
 
 -   Install dependencies
