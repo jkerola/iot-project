@@ -23,7 +23,32 @@ cd iot-project
 pre-commit install
 ```
 
+
 See the readme files under _backend_ and _frontend_ for more instructions.
+
+### Back-end
+
+```shell
+cd backend
+npm install
+```
+
+Get the API key shared in teams and save it in a file called _.dotenv_:
+
+```shell
+APIKEY=<key here>
+PORT=<application port here>
+```
+
+### Front-end
+
+```shell
+cd frontend
+cd iot-project
+npm install recharts
+npm start
+```
+
 
 ## Example query
 
