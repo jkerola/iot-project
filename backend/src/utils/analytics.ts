@@ -1,4 +1,3 @@
-import Sensors from "./sensors";
 const limits = {
     co2: {
         low: 450,
@@ -7,7 +6,6 @@ const limits = {
     },
 };
 const calculateAverageCO2 = (co2: Array<number>): number => {
-    console.log(co2);
     const sum = co2.reduce((a, b) => a + b);
     return sum / co2.length;
 };
