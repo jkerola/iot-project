@@ -12,7 +12,7 @@ repos:
     hooks:
       - id: detect-secrets
         args: ["--baseline", ".secrets.baseline"]
-        exclude: package.lock.json
+        exclude: (package-lock.json|sensors.ts)
   # Check newlines, yaml is valid, prevent commits to main
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.1.0

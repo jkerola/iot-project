@@ -23,6 +23,9 @@ cd iot-project
 pre-commit install
 ```
 
+
+See the readme files under _backend_ and _frontend_ for more instructions.
+
 ### Back-end
 
 ```shell
@@ -45,6 +48,7 @@ cd iot-project
 npm install recharts
 npm start
 ```
+
 
 ## Example query
 
