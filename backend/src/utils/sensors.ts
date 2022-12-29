@@ -1,4 +1,7 @@
-// pr
+/**
+ * Data class which contains the sensor ids for the devices located at each restaurant on campus.
+ * Sensor ids were manually chosen from https://smartcampus.oulu.fi/manage/
+ */
 export default class Sensors {
     static locations = ["napa", "kastari", "foodoo", "mara", "foobar"];
     static napa = [
@@ -47,6 +50,9 @@ export default class Sensors {
 
     static mara = ["A81758FFFE03107B", "A81758FFFE031048"];
 
+    /**
+     * Returns the sensor ids for all devices across all restaurants
+     */
     static get all(): Array<string> {
         return [
             ...this.napa,
@@ -57,6 +63,11 @@ export default class Sensors {
         ];
     }
 
+    /**
+     * Returns the sensor ids associated with the given restaurant.
+     * @param location restaurant name
+     * @returns Array of sensor ids
+     */
     static getSensorsForLocation(location: string): Array<string> {
         switch (location) {
             case "napa":
