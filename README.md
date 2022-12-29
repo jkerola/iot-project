@@ -33,11 +33,10 @@ cd backend
 npm install
 ```
 
-Get the API key shared in teams and save it in a file called _.dotenv_:
+Get the API key shared in teams and save it in a file called _.dotenv_ in the _backend_ directory:
 
 ```shell
-APIKEY=<key here>
-PORT=<application port here>
+API_KEY=<key here>
 ```
 
 ### Front-end
