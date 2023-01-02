@@ -7,13 +7,11 @@ function App() {
     <>
       <TopNav />
       <div className="contentWrapper">
-        {/*<RestaurantCard name="Café Hub" />*/}
         <RestaurantCard name="Foobar" />
-        {/*<RestaurantCard name="Foodoo" />*/}
-        {/*<RestaurantCard name="H2O" />*/}
-        {/*<RestaurantCard name="Kastari" />*/}
-        {/*<RestaurantCard name="Napa" />*/}
-        {/*<RestaurantCard name="Subway" />*/}
+        <RestaurantCard name="Foodoo" />
+        <RestaurantCard name="Kastari" />
+        <RestaurantCard name="Mara" />
+        <RestaurantCard name="Napa" />
       </div>
     </>
   );

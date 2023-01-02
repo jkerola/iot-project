@@ -29,7 +29,7 @@ function RestaurantCard(props) {
       <hr width="100%" color="#3A3B3C" />
       <div className="crowdedness">crowdedness</div>
       <div className="crowdLevelWrapper">
-        <CrowdLevel />
+        <CrowdLevel name={name} />
       </div>
       <div className="chartWrapper">
         <Chart />
