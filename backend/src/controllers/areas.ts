@@ -11,7 +11,7 @@ dotenv.config();
 // Constants
 const APIKEY = process.env.API_KEY;
 const BASEURL = "https://query-api.rahtiapp.fi";
-const TIMESPAN = 30 * 60 * 1000; // past 30 minutes
+const TIMESPAN = 4 * 30 * 60 * 1000; // past 4*30 min = 2 h
 
 // Get information from all restaurants
 areasController.get(

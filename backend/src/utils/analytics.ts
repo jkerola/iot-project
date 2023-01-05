@@ -5,8 +5,9 @@
 const limits = {
     co2: {
         low: 450,
-        medium: 500,
-        high: 600,
+        moderate: 500,
+        high: 550,
+        veryHigh: 600,
     },
 };
 
@@ -28,12 +29,14 @@ const calculateAverage = (list: Array<number>): number => {
 const estimateCrowd = (averageCO2: number): string => {
     if (averageCO2 < limits.co2.low) {
         return "very low";
-    } else if (averageCO2 > limits.co2.low && averageCO2 < limits.co2.medium) {
-        return "low to moderate";
-    } else if (averageCO2 > limits.co2.medium && averageCO2 < limits.co2.high) {
-        return "moderate to high";
-    } else {
+    } else if (averageCO2 < limits.co2.moderate) {
+        return "low";
+    } else if (averageCO2 < limits.co2.high) {
+        return "moderate";
+    } else if (averageCO2 < limits.co2.veryHigh) {
         return "high";
+    } else {
+        return "very high";
     }
 };
 
