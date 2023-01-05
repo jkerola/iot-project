@@ -54,11 +54,11 @@ areasController.get(
 
             return res.status(200).json({
                 areas: Sensors.locations,
-                crowd_mara: estimateCrowd(maraAvgCo2),
-                crowd_napa: estimateCrowd(napaAvgCo2),
-                crowd_foobar: estimateCrowd(foobarAvgCo2),
-                crowd_kastari: estimateCrowd(kastariAvgCo2),
-                crowd_foodoo: estimateCrowd(foodooAvgCo2),
+                crowd_mara: estimateCrowd(maraAvgCo2, "mara"),
+                crowd_napa: estimateCrowd(napaAvgCo2, "napa"),
+                crowd_foobar: estimateCrowd(foobarAvgCo2, "foobar"),
+                crowd_kastari: estimateCrowd(kastariAvgCo2, "kastari"),
+                crowd_foodoo: estimateCrowd(foodooAvgCo2, "foodoo"),
                 co2_mara: maraAvgCo2,
                 co2_napa: napaAvgCo2,
                 co2_foobar: foobarAvgCo2,
@@ -106,7 +106,7 @@ areasController.get(
                 .filter(e => e.co2 != null && e.co2 < 65000)
                 .map(e => e.co2);
             const co2_avg = calculateAverage(co2);
-            const crowd_level = estimateCrowd(co2_avg);
+            const crowd_level = estimateCrowd(co2_avg, location);
 
             // generate graphing data
             const co2_data = points
