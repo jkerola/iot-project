@@ -2,24 +2,11 @@ import { Line, LineChart, XAxis, ResponsiveContainer, YAxis } from "recharts";
 import { useState, useEffect } from "react";
 import moment from "moment";
 
-var baseURL = "http://127.0.0.1:3000";
-var timezone = 2; // UTC+2
+var baseURL = "http://127.0.0.1:3000"; // Backend API address
 
 const dateFormatter = (date) => {
   return moment(date).format("HH:mm");
 };
-
-const CustomTooltip = ({ active, payload, label }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="custom-tooltip">
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
-      </div>
-    );
-  }
-};
-
-var last;
 
 function Chart(props) {
   const [tickValues, setTickValues] = useState([]); // For filtering which labels are shown on x-axis
@@ -35,6 +22,7 @@ function Chart(props) {
         var dataValuesConstructor = [];
         var tickValuesConstructor = [];
         var currentHour = "99";
+        var last;
 
         for (let i = 0; i < data.co2_data.length; i++) {
           var timestampEpoch = moment(data.co2_data[i].time).valueOf();
@@ -49,14 +37,12 @@ function Chart(props) {
           });
           last = timestampEpoch;
         }
-        console.log(tickValuesConstructor);
+
         setValues(dataValuesConstructor);
         setTickValues(tickValuesConstructor);
         setUpdateTime(moment(last).format("HH:mm:ss"));
       });
   }, []);
-
-  console.log(props.name, values);
 
   return (
     <>

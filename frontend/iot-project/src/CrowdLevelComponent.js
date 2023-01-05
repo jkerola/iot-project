@@ -1,7 +1,7 @@
 import "./RestaurantCard.css";
 import { useState, useEffect } from "react";
 
-var baseURL = "http://127.0.0.1:3000";
+var baseURL = "http://127.0.0.1:3000"; // Backend API address
 
 function CrowdLevel(props) {
   const [crowdLevel, setCrowdLevel] = useState("");
@@ -11,9 +11,7 @@ function CrowdLevel(props) {
     fetch(URL)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setCrowdLevel(data.crowd_level);
-        //console.log(crowdLevel)
       });
   }, []);
 
