@@ -1,5 +1,4 @@
 import "./TopNav.css";
-import { useState } from "react";
 
 function TopNav() {
   return (

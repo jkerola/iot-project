@@ -1,31 +1,19 @@
 import "./RestaurantCard.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-var thresholds = {
-  "very high": 85,
-  high: 65,
-  normal: 35,
-  low: 15,
-  "very low": 0,
-};
+var baseURL = "http://127.0.0.1:3000"; // Backend API address
 
-function getCrowdLevelTitle(number) {
-  var level = "unknown";
-  for (var key in thresholds) {
-    if (thresholds[key] <= number) {
-      level = key;
-      break;
-    }
-  }
-  return level;
-}
+function CrowdLevel(props) {
+  const [crowdLevel, setCrowdLevel] = useState("");
 
-function CrowdLevel() {
-  var randomCrowdNumber = Math.floor(Math.random() * 101);
-
-  const [crowdLevel, setCrowdLevel] = useState(
-    getCrowdLevelTitle(randomCrowdNumber)
-  );
+  var URL = (baseURL + "/" + props.name).toLowerCase();
+  useEffect(() => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data) => {
+        setCrowdLevel(data.crowd_level);
+      });
+  }, []);
 
   if (crowdLevel == "very high") {
     return <div className="crowdLevelAlert">{crowdLevel}</div>;
