@@ -11,7 +11,7 @@ dotenv.config();
 // Constants
 const APIKEY = process.env.API_KEY;
 const BASEURL = "https://query-api.rahtiapp.fi";
-const TIMESPAN = 4 * 30 * 60 * 1000; // past 4*30 min = 2 h
+const TIMESPAN = 4 * 30 * 60 * 1000; // past 2h
 
 // Get information from all restaurants
 areasController.get(
@@ -20,7 +20,7 @@ areasController.get(
         try {
             // Generate url
             const now = new Date();
-            const from = new Date(now.getTime() - TIMESPAN); // 30 minutes previous
+            const from = new Date(now.getTime() - TIMESPAN); // 2h previous
             const sensorIds = Sensors.all.join(",");
             const url = `${BASEURL}/events?deviceIds=${sensorIds}&from=${from.toISOString()}&to=${now.toISOString()}`;
 
