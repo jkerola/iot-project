@@ -44,7 +44,6 @@ API_KEY=<key here>
 ```shell
 cd frontend
 cd iot-project
-npm install recharts
 npm start
 ```
 
